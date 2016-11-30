@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weekapi", "Weekapi\Weekapi.csproj", "{C74D9CEE-D974-41DC-82A7-FF020A7996A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA} = {6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vk.Api", "Vk.Api\Vk.Api.csproj", "{98A1700B-C9D4-4264-A492-88359592FC11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instagram.Api", "Instagram.Api\Instagram.Api.csproj", "{D6109778-E868-4A72-8DEB-F7C5D78166B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C74D9CEE-D974-41DC-82A7-FF020A7996A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74D9CEE-D974-41DC-82A7-FF020A7996A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74D9CEE-D974-41DC-82A7-FF020A7996A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74D9CEE-D974-41DC-82A7-FF020A7996A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A1700B-C9D4-4264-A492-88359592FC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A1700B-C9D4-4264-A492-88359592FC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A1700B-C9D4-4264-A492-88359592FC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A1700B-C9D4-4264-A492-88359592FC11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6109778-E868-4A72-8DEB-F7C5D78166B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6109778-E868-4A72-8DEB-F7C5D78166B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6109778-E868-4A72-8DEB-F7C5D78166B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6109778-E868-4A72-8DEB-F7C5D78166B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
