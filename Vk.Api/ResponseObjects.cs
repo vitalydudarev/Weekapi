@@ -23,4 +23,23 @@
 		public int Id { get; set; }
 		public string Name { get; set; }
 	}
+	
+	public struct Message
+	{
+		public int Id { get; set; }
+		public string Body { get; set; }
+		public int UserId { get; set; }
+		public int FromId { get; set; }
+		public int Date { get; set; }
+		public int ReadState { get; set; }
+		public int Out { get; set; }
+		public string Attachements { get; set; }
+	}
+
+	public struct Dialog
+	{
+		public Message Message { get; set; }
+		public int InRead { get; set; }
+		public int OutRead { get; set; }
+	}
 }

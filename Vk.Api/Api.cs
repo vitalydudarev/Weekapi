@@ -9,6 +9,7 @@
 		private Audio _audio;
 		private Friends _friends;
 		private Groups _groups;
+		private Messages _messages;
 
 		public Audio Audio
 		{
@@ -23,6 +24,11 @@
 		public Groups Groups
 		{
 			get { return _groups ?? (_groups = new Groups(_accessToken, _apiVersion, Uri)); }
+		}
+		
+		public Messages Messages
+		{
+			get { return _messages ?? (_messages = new Messages(_accessToken, _apiVersion, Uri)); }
 		}
 
 		public Api(string accessToken, string apiVersion)
