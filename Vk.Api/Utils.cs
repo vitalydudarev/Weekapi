@@ -4,7 +4,7 @@ namespace Vk.Api
 {
     public static class Utils
     {
-        private static List<Message> GetMessageHistory(Api vkApi, int userId)
+        public static List<Message> GetMessageHistory(Api vkApi, int userId)
         {
             int offset = 0;
             bool iterate = true;
