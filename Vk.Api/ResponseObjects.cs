@@ -42,4 +42,13 @@
 		public int InRead { get; set; }
 		public int OutRead { get; set; }
 	}
+
+	public struct Friend
+	{
+		public int Id { get; set; }
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
+		public string Deactivated { get; set; }
+		public int Hidden { get; set; }
+	}
 }

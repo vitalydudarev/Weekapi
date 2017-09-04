@@ -2,10 +2,13 @@
 
 namespace Vk.Api
 {
-	public class Audio : Base
+	public class Audio
 	{
-		public Audio(string accessToken, string apiVersion, string uri) : base(accessToken, apiVersion, uri)
+		private readonly RequestExecutor _requestExecutor;
+
+		public Audio(RequestExecutor requestExecutor)
 		{
+			_requestExecutor = requestExecutor;
 		}
 
 		public Track[] Get(string ownerId)
@@ -15,7 +18,7 @@ namespace Vk.Api
 				{ "owner_id", ownerId }
 			};
 
-			return Execute<Response<Track>>("audio.get", parameters).Items;
+			return _requestExecutor.Execute<Response<Track>>("audio.get", parameters).Items;
 		}
 
 		public Track[] Search(string q)
@@ -26,7 +29,7 @@ namespace Vk.Api
 				{ "auto_complete", "1" }
 			};
 
-			return Execute<Response<Track>>("audio.search", parameters).Items;
+			return _requestExecutor.Execute<Response<Track>>("audio.search", parameters).Items;
 		}
 	}
 }

@@ -2,10 +2,13 @@
 
 namespace Vk.Api
 {
-	public class Groups : Base
+	public class Groups
 	{
-		public Groups(string accessToken, string apiVersion, string uri) : base(accessToken, apiVersion, uri)
+		private readonly RequestExecutor _requestExecutor;
+
+		public Groups(RequestExecutor requestExecutor)
 		{
+			_requestExecutor = requestExecutor;
 		}
 
 		public Group[] Search(string q)
@@ -15,7 +18,7 @@ namespace Vk.Api
 				{ "q", q }
 			};
 
-			return Execute<Response<Group>>("groups.search", parameters).Items;
+			return _requestExecutor.Execute<Response<Group>>("groups.search", parameters).Items;
 		}
 	}
 }

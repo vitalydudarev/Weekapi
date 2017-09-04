@@ -2,20 +2,23 @@
 
 namespace Vk.Api
 {
-    public class Messages : Base
+    public class Messages
     {
-        public Messages(string accessToken, string apiVersion, string uri) : base(accessToken, apiVersion, uri)
+        private readonly RequestExecutor _requestExecutor;
+
+        public Messages(RequestExecutor requestExecutor)
         {
+            _requestExecutor = requestExecutor;
         }
         
         public Dialog[] GetDialogs()
         {
-            return Execute<Response<Dialog>>("messages.getDialogs", new Dictionary<string, string>()).Items;
+            return _requestExecutor.Execute<Response<Dialog>>("messages.getDialogs", new Dictionary<string, string>()).Items;
         }
         
         public Message[] Get()
         {
-            return Execute<Response<Message>>("messages.get", new Dictionary<string, string>()).Items;
+            return _requestExecutor.Execute<Response<Message>>("messages.get", new Dictionary<string, string>()).Items;
         }
 
         public Message[] GetHistory(string userId, int offset, int count, int rev = 0)
@@ -28,7 +31,7 @@ namespace Vk.Api
                 { "rev", rev.ToString() }
             };
             
-            return Execute<Response<Message>>("messages.getHistory", parameters).Items;
+            return _requestExecutor.Execute<Response<Message>>("messages.getHistory", parameters).Items;
         }
     }
 }
