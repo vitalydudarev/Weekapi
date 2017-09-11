@@ -20,6 +20,8 @@ namespace Vk.Api
         {
             return _requestExecutor.Execute<Response<Message>>("messages.get", new Dictionary<string, string>()).Items;
         }
+        
+        public string Response => _requestExecutor.ResponseSource;
 
         public Message[] GetHistory(string userId, int offset, int count, int rev = 0)
         {

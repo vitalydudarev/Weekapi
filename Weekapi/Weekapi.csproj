@@ -12,6 +12,8 @@
     <AssemblyName>Weekapi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6DFD95CE-A0A9-4F7D-92D0-5750D8BCC8EA}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Vk.Api\Vk.Api.csproj">
       <Project>{98A1700B-C9D4-4264-A492-88359592FC11}</Project>
       <Name>Vk.Api</Name>

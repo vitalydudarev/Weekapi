@@ -4,12 +4,12 @@
 	{
 		private readonly RequestExecutor _requestExecutor;
 
-		private Audio _audio;
+		private Audios _audios;
 		private Friends _friends;
 		private Groups _groups;
 		private Messages _messages;
 		
-		public Audio Audio => _audio ?? (_audio = new Audio(_requestExecutor));
+		public Audios Audios => _audios ?? (_audios = new Audios(_requestExecutor));
 
 		public Friends Friends => _friends ?? (_friends = new Friends(_requestExecutor));
 
