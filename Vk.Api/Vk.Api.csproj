@@ -54,7 +54,6 @@
     <Compile Include="ResponseObjects.cs" />
     <Compile Include="ResponseParser.cs" />
     <Compile Include="Audios.cs" />
-    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

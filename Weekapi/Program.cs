@@ -1,4 +1,4 @@
-﻿using Vk.Api;
+﻿using System;
 
 namespace Weekapi
 {
@@ -6,7 +6,19 @@ namespace Weekapi
 	{
 		public static void Main(string[] args)
 		{
-			var vkApi = new Api("", "5.67", @"https://api.vk.com/method/");
+			if (args.Length == 0)
+			{
+				Console.WriteLine("No handler name/arguments passed.");
+				return;
+			}
+
+			var handler = args[0];
+			var arguments = new string[args.Length - 1];
+
+			for (int i = 1; i < args.Length; i++)
+				arguments[i - 1] = args[i];
+			
+			CommandExecutor.Run(handler, arguments);
 		}
 	}
 }
