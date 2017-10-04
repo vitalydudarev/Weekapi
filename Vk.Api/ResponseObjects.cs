@@ -104,6 +104,38 @@ namespace Vk.Api
 		public int CanAdd { get; set; }			// non-documented
 		public int CanEdit { get; set; }		// non-documented
 	}
+	
+	public class Page
+	{
+		public int Id { get; set; }
+		public int GroupId { get; set; }
+		public int CreatorId { get; set; }
+		public string Title { get; set; }
+		public int CurrenUserCanEdit { get; set; }
+		public int CurrenUserCanEditAccess { get; set; }
+		public int WhoCanView { get; set; }
+		public int WhoCanEdit { get; set; }
+		public int Edited { get; set; }
+		public int Created { get; set; }
+		public int EditorId { get; set; }
+		public int Views { get; set; }
+		public string Parent { get; set; }
+		public string Parent2 { get; set; }
+		public string Source { get; set; }
+		public string Html { get; set; }
+		public string ViewUrl { get; set; }
+	}
+
+	public class Gift
+	{
+		public int Id { get; set; }
+		[JsonProperty("thumb_256")]
+		public string Thumb256 { get; set; }
+		[JsonProperty("thumb_96")]
+		public string Thumb96 { get; set; }
+		[JsonProperty("thumb_48")]
+		public string Thumb48 { get; set; }
+	}
 
 	public interface IWallAttachment
 	{
@@ -113,10 +145,50 @@ namespace Vk.Api
 	{
 	}
 	
+	// https://vk.com/dev/attachments_w
 	public class PhotoWallAttachment : Photo, IWallAttachment
 	{
 		public int PostId { get; set; }
 		public string AccessKey { get; set; }
+	}
+	
+	public class VideoWallAttachment : Video, IWallAttachment
+	{
+	}
+	
+	public class AudioWallAttachment : Audio, IWallAttachment
+	{
+		public string AccessKey { get; set; }
+	}
+	
+	public class DocWallAttachment : Document, IWallAttachment
+	{
+		public string AccessKey { get; set; }
+	}
+	
+	public class PageWallAttachment : Page, IWallAttachment
+	{
+		public string AccessKey { get; set; }
+	}
+	
+	public class PollWallAttachment : IWallAttachment
+	{
+		public string AccessKey { get; set; }
+		public int Id { get; set; }
+		public int OwnerId { get; set; }
+		public int Created { get; set; }
+		public string Question { get; set; }
+		public int Votest { get; set; }
+		public int AnswerId { get; set; }
+		public PollAnswer[] Answers { get; set; }
+	}
+
+	public class PollAnswer
+	{
+		public int Id { get; set; }
+		public string Text { get; set; }
+		public int Votes { get; set; }
+		public double Rate { get; set; }
 	}
 
 	public class LinkWallAttachment : IWallAttachment
@@ -194,6 +266,10 @@ namespace Vk.Api
 	}
 
 	public class VideoMessageAttachment : Video, IMessageAttachment
+	{
+	}
+	
+	public class GiftMessageAttachment : Gift, IMessageAttachment
 	{
 	}
 

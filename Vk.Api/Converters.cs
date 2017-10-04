@@ -60,6 +60,11 @@ namespace Vk.Api
 						var video = item["video"].ToObject<VideoMessageAttachment>(jsonSerializer);
 						result.Add(video);
 					}
+					else if (type == "gift")
+					{
+						var gift = item["gift"].ToObject<GiftMessageAttachment>(jsonSerializer);
+						result.Add(gift);
+					}
 					else
 						throw new NotSupportedException($"Type {type} is not supported.");
 				}
@@ -93,7 +98,7 @@ namespace Vk.Api
 			if (token.Type == JTokenType.Array)
 			{
 				var result = new List<IWallAttachment>();
-				
+
 				foreach (var item in token)
 				{
 					var type = item["type"].Value<string>();
@@ -107,6 +112,31 @@ namespace Vk.Api
 						var link = item["link"].ToObject<LinkWallAttachment>(jsonSerializer);
 						result.Add(link);
 					}
+					else if (type == "video")
+					{
+						var video = item["video"].ToObject<VideoWallAttachment>(jsonSerializer);
+						result.Add(video);
+					}
+					else if (type == "audio")
+					{
+						var audio = item["audio"].ToObject<AudioWallAttachment>(jsonSerializer);
+						result.Add(audio);
+					}
+					else if (type == "poll")
+					{
+						var poll = item["poll"].ToObject<PollWallAttachment>(jsonSerializer);
+						result.Add(poll);
+					}
+					else if (type == "doc")
+					{
+						var doc = item["doc"].ToObject<DocWallAttachment>(jsonSerializer);
+						result.Add(doc);
+					}
+					else if (type == "page")
+					{
+						var page = item["page"].ToObject<PageWallAttachment>(jsonSerializer);
+						result.Add(page);
+					}
 					else
 						throw new NotSupportedException($"Type {type} is not supported.");
 				}
@@ -114,7 +144,7 @@ namespace Vk.Api
 				return result.ToArray();
 			}
 			
-			return new NotSupportedException($"Not supported token type.");
+			return new NotSupportedException("Not supported token type.");
 		}
 
 		public override bool CanWrite => false;
