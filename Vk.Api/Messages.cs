@@ -11,9 +11,15 @@ namespace Vk.Api
             _requestExecutor = requestExecutor;
         }
         
-        public Dialog[] GetDialogs()
+        public Dialog[] GetDialogs(int offset, int count)
         {
-            return _requestExecutor.Execute<Response<Dialog>>("messages.getDialogs", new Dictionary<string, string>()).Items;
+            var parameters = new Dictionary<string, string>
+            {
+                { "offset", offset.ToString() },
+                { "count", count.ToString() }
+            };
+            
+            return _requestExecutor.Execute<Response<Dialog>>("messages.getDialogs", parameters).Items;
         }
         
         public Message[] Get()

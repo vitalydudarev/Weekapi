@@ -28,5 +28,29 @@ namespace Weekapi
 
             return messageHistory;
         }
+        
+        public static List<Dialog> GetDialogs(Api vkApi)
+        {
+            int offset = 0;
+            bool iterate = true;
+			
+            var dialogList = new List<Dialog>();
+
+            while (iterate)
+            {
+                var dialogs = vkApi.Messages.GetDialogs(offset, 200);
+                if (dialogs.Length == 0)
+                    iterate = false;
+                else
+                {
+                    dialogList.AddRange(dialogs);
+                    offset += 200;
+					
+                    System.Threading.Thread.Sleep(1000);
+                }
+            }
+
+            return dialogList;
+        }
     }
 }

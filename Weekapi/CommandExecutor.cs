@@ -21,7 +21,7 @@ namespace Weekapi
             }
             catch (Exception exc)
             {
-                Console.WriteLine(exc.Message);
+                Console.WriteLine(exc.InnerException?.Message ?? exc.Message);
             }
         }
 
